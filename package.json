@@ -1,0 +1,21 @@
+{
+  "name": "shako",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "npmlog": "^4.1.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Notekunn/shako.git"
+  }
+}

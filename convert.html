@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chuyển đổi</title>
+    <script>
+        function xuly() {
+            let formdata = document.getElementById('formdata');
+            let result = document.getElementById('result');
+            let formObject = formdata.value
+                .split('\n')
+                .map(e => {
+                    if(!e.includes(':')) return {};
+                    let firstDOt = e.indexOf(':');
+                    return {
+                        [e.slice(0, firstDOt).trim()]: e.slice(firstDOt + 1, e.length).trim()
+                    }
+                }).reduce((a, b) => ({ ...a, ...b }), {})
+            result.innerText = JSON.stringify(formObject, null, "\t");
+        }
+
+    </script>
+</head>
+
+<body>
+    <textarea name="formdata" id="formdata" cols="30" rows="10">key: value</textarea>
+    <p><b style="color: red"> Kết quả:</b></p>
+    <div ><p id="result"></p></div>
+    <button onclick="xuly()">CONVERT</button>
+</body>
+
+</html>
