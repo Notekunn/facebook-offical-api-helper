@@ -33,8 +33,7 @@ module.exports = async (input) => {
     }
     appState.map(function (c) {
 
-        var str = c.name || c.key + "=" + c.value + "; expires=" + c.expires + "; domain=" + c.domain + "; path=" + c.path + ";";
-
+        var str = (c.name || c.key) + "=" + c.value + "; expires=" + c.expires + "; domain=" + c.domain.trim('.') + "; path=" + c.path + ";";
         jarRequest.setCookie(str, "http://" + c.domain);
 
     });

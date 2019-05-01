@@ -180,6 +180,32 @@ Api to post a bio.
 [back to top](#table-of-contents)
 
 ---
+## PAGE API
+Api to work with page.
+Example:
+```js
+const shako = require('shako');
+const appState = require('../config/appstate.json');
+(async () => {
+    const api = await shako({ appState });
+    const result = await api.page.createPage({name: 'zuck'});
+})().catch((e) => console.log('ERROR: ' + e));
+
+```
+- [Create Page](#create-page).
+
+#### Create Page
+Api to create A new Page.
+```js
+
+  api.page.createPage({ name: 'PAGE_NAME', super_category, category});
+
+```
+List id category in [here](https://jsoneditoronline.org/?id=4177d3ba24d840e48963cc39eebdcfde)
+
+[back to top](#table-of-contents)
+
+---
 ## CUSTOM API
 You can custom your api
 

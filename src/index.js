@@ -13,6 +13,9 @@ const moduleApi = {
         'getToken',
         'postBio',
         'getID'
+    ],
+    page: [
+        'createPage'
     ]
 
 }
